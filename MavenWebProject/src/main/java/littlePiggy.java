@@ -20,7 +20,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/littlePiggy")
 public class littlePiggy extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
