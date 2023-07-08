@@ -28,6 +28,14 @@
     </dependency>
     
     <dependency>
+    	<groupId>com.mysql</groupId>
+    	<artifactId>mkysql-connector-j</artifactId>
+    	<version>6.0.0</version>
+    </dependency>
+		
+	</dependency>
+    
+    <dependency>
 		<groupId>jakarta.servlet</groupId>
 		<artifactId>jakarta.servlet-api</artifactId>
 		<version>6.0.0</version>
