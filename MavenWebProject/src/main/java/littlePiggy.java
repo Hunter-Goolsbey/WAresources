@@ -25,10 +25,10 @@ public class littlePiggy extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public littlePiggy() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+//    public littlePiggy() {
+//        super();
+//        // TODO Auto-generated constructor stub
+//    }
 
 //	/**
 //	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
