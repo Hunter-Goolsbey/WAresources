@@ -11,7 +11,7 @@
 
   <name>MavenWebProject Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>http://34.193.84.77:8080/MavenWebProject</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
