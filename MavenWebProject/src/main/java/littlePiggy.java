@@ -30,18 +30,18 @@ public class littlePiggy extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-    @Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+//	/**
+//	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+//	 */
+//    @Override
+//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		// TODO Auto-generated method stub
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
+//	}
+//
+//	/**
+//	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+//	 */
     @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -50,7 +50,7 @@ public class littlePiggy extends HttpServlet {
 		String password = request.getParameter("password");
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/HelloWorld","root","Cook1");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/HelloWorld","root","root");
 			Statement stm = con.createStatement();
 			ResultSet rs = stm.executeQuery("select * from UserCredentials where Username='" + username + "'and Password='" + password +"';");
 			if(rs.next()) {
