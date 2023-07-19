@@ -32,7 +32,7 @@ public class littlePiggy extends HttpServlet {
 		String password = request.getParameter("password");
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/HelloWorld","root","root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/HelloWorld","","");
 			Statement stm = con.createStatement();
 			ResultSet rs = stm.executeQuery("select * from UserCredentials where Username='" + username + "'and Password='" + password +"';");
 			if(rs.next()) {
@@ -43,7 +43,7 @@ public class littlePiggy extends HttpServlet {
 			}
 			con.close();
 		}catch (Exception e){
-			response.sendRedirect("Home.html");
+			//response.sendRedirect("Home.html");
 			System.out.println("Connection not Made");
 			System.out.println(e);
 		}
