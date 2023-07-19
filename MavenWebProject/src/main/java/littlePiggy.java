@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class littlePiggy
  */
 
-
 @WebServlet("/littlePiggy")
 public class littlePiggy extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -44,6 +43,7 @@ public class littlePiggy extends HttpServlet {
 			}
 			con.close();
 		}catch (Exception e){
+			response.sendRedirect("Home.html");
 			System.out.println("Connection not Made");
 			System.out.println(e);
 		}
