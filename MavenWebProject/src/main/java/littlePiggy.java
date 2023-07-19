@@ -30,9 +30,11 @@ public class littlePiggy extends HttpServlet {
     	response.setContentType("text/html");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		String mysqlUN = "ducky";
+		String mysqlPW = System.getenv("SQLJAVA");
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/HelloWorld","ducky","password");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/HelloWorld",mysqlUN,mysqlPW);
 			Statement stm = con.createStatement();
 			ResultSet rs = stm.executeQuery("select * from UserCredentials where Username='" + username + "'and Password='" + password +"';");
 			if(rs.next()) {
