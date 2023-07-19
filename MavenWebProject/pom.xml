@@ -27,12 +27,6 @@
       <scope>test</scope>
     </dependency>
     
-    <dependency>
-		<groupId>org.junit</groupId>
-		<artifactId>junit-bom</artifactId>
-		<version>5.9.1</version>
-		<scope>test</scope>
-	</dependency>
     
     <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
 	<dependency>
