@@ -2,7 +2,7 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-public class Jtest {
+public class TestLittlePiggy {
 
 	@Test
 	public void test() {
