@@ -41,7 +41,7 @@ public class TestLittlePiggy {
 //		//driver.close();
 //	}
 	
-	public void main (String[] args) throws InterruptedException {
+	public static void main (String[] args) throws InterruptedException {
 		
 		//tryMe();
 	}
