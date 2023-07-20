@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 //import static org.testng.Assert.assertTrue;
 
 import org.junit.Test;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+//import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 public class TestLittlePiggy {
 	
@@ -21,7 +21,7 @@ public class TestLittlePiggy {
 		String PW = System.getenv("TEST_PASS_BASIC");
 		System.setProperty("webdriver.chrome.driver", "/Users/The-Intern/Downloads/chromedriver");
 		ChromeOptions options = new ChromeOptions();
-		//options.addArguments("-headless");
+		options.addArguments("-headless");
 		options.setBinary("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome");
 		
 		
