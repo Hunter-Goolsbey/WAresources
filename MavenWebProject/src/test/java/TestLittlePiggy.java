@@ -1,7 +1,6 @@
-import org.junit.Assert.*;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertTrue;
+import org.testng.annotations.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
@@ -10,8 +9,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 //import static org.testng.Assert.assertTrue;
 
-import org.junit.Test;
-//import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 public class TestLittlePiggy {
 	
@@ -46,7 +43,6 @@ public class TestLittlePiggy {
 	
 	public void main (String[] args) throws InterruptedException {
 		
-				
 		tryMe();
 	}
 
