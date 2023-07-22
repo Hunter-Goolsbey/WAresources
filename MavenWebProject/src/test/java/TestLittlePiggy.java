@@ -1,5 +1,5 @@
 import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
+//import static org.testng.AssertJUnit.assertTrue;
 import org.testng.annotations.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.WebDriver;
@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 
-import static org.testng.Assert.assertTrue;
+//import static org.testng.Assert.assertTrue;
 
 
 public class TestLittlePiggy {
@@ -28,13 +28,13 @@ public class TestLittlePiggy {
 		System.out.println("Started Selenium");
 		driver.get("http://34.193.84.77:8080/MavenWebProject/");
 		System.out.println("Entered webpage");
-		Thread.sleep(3000);
+		//Thread.sleep(1000);
 		System.out.println((String)driver.getCurrentUrl());
-		driver.findElement(By.xpath("/html/body//form[@action='littlePiggy']/table//input[@name='username']")).sendKeys(UN);
-		driver.findElement(By.xpath("/html/body//form[@action='littlePiggy']/table//input[@name='password']")).sendKeys(PW);
-		driver.findElement(By.xpath("/html/body//form[@action='littlePiggy']/table//input[@value='login']")).click();
+		driver.findElement(By.cssSelector("[type='text']")).sendKeys(UN);
+		driver.findElement(By.cssSelector("[type='password']")).sendKeys(PW);
+		driver.findElement(By.cssSelector("[type='submit']")).click();
 		System.out.println("Passed Login");
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		assertEquals((String)driver.getCurrentUrl(), "http://34.193.84.77:8080/MavenWebProject/Home.html");
 		System.out.println((String)driver.getCurrentUrl());
 		driver.quit();
