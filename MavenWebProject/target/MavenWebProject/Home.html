@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-bs-theme="light">
 	<head>
 		<!--  <link rel="stylesheet" href="appBoots.css">-->
 		<meta charset="utf-8">
@@ -11,10 +11,31 @@
 		<title>Home</title>
 	</head>
 	<body>
-		<!--  <h1>Welcome Home!</h1> -->
+		<div class="offcanvas offcanvas-end" id="demo">
+  			<div class="offcanvas-header">
+    			<h1 class="offcanvas-title">Profile</h1>
+    			<button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  			</div>
+  			<div class="offcanvas-body">
+  			<div>
+    			<button class="btn">MESSAGES <span class="badge bg-primary">1</span></button>
+    			</div>
+    			<div>
+    			<a href="profile.html"><button class="btn">SETTINGS</button></a>
+    			</div>
+    			<div>
+    			<button class="btn">ABOUT</button>
+    			</div>
+    			<div>
+    			<button class="btn">LOGOUT</button>
+    			</div>
+  			</div>
+		</div>
+		
+		
 		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   			<div class="container-fluid">
-    			<a class="navbar-brand" href="#">Logo</a>
+    			<a class="navbar-brand" href="Home.html">Logo</a>
     			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       			<span class="navbar-toggler-icon"></span>
     			</button>
@@ -23,8 +44,13 @@
         				<li class="nav-item">
           					<a class="nav-link" href="Home.html">Home</a>
         				</li>
-        				<li class="nav-item">
-          					<a class="nav-link" href="#campaign">Campaign</a>
+        				<li class="nav-item dropdown">
+          					<a class="nav-link dropdown-toggle" href="#Customers" role="button" data-bs-toggle="dropdown">Customers</a>
+          					<ul class="dropdown-menu">
+            					<li><a class="dropdown-item" href="#">Advertiser / Agency Inquiry</a></li>
+            					<li><a class="dropdown-item" href="#">Advertiser / Agency Maintenance</a></li>
+            					<li><a class="dropdown-item" href="#">Approve Pending Accounts</a></li>
+          					</ul>
         				</li>
         				<li class="nav-item">
           					<a class="nav-link" href="#Commissions">Commissions</a>
@@ -36,42 +62,64 @@
           					<a class="nav-link" href="#Admin">Admin</a>
         				</li>
       				</ul>
+      				<a class="navbar-brand" href="#Profile" data-bs-toggle="offcanvas" data-bs-target="#demo">
+      <img src="https://files.worldwildlife.org/wwfcmsprod/images/African_Elephant_Kenya_112367/story_full_width/qxyqxqjtu_WW187785.jpg" alt="Logo" style="width:40px;" class="rounded-pill">
+    </a>
     			</div>
   			</div>
 		</nav>
 		
-		<div class="row">
-  			<div class="col-sm-3">Hello World!</div>
-  			<!-- <div class="col-sm-3">.col-sm-3</div>
-  			<div class="col-sm-3">.col-sm-3</div>
-  			<div class="col-sm-3">.col-sm-3</div> -->
+		
+		<h4 class="p-2">HOME: ADVERTISING DASHBOARD</h4>
+		<div class="container mt-2">
+  			
+  			<!-- <p><strong>Note:</strong> The <strong>data-bs-parent</strong> attribute makes sure that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.</p> -->
+  			<div id="accordion">
+    			<div class="card">
+      				<div class="card-header-sm">
+        				<a class="btn" data-bs-toggle="collapse" href="#collapseOne">My Client Messages from Portal</a>
+        				<span class="badge bg-primary rounded-pill">1</span>
+      				</div>
+      				<div id="collapseOne" class="collapse" data-bs-parent="#accordion">
+        				<div class="card-body">
+        					--ReadMe <span class="badge bg-primary">NEW</span>
+        				</div>
+      				</div>
+    			</div>
+  			</div>
+  		</div>
+  		<div class="container-fluid p-2">
+  			<div class="row">
+    			<div class="col-sm-4 p-2 border">
+    				<div class="row">
+    			 		<div>
+      						<label for='username' class="form-label">Customer Search:</label>
+      						<input type="text" name="username" class="form-control"/>
+      					</div>
+      				</div>
+      				<div class="row">
+      					<div>
+      						<ul class="nav nav-tabs" id="myTab" role="tablist">
+  								<li class="nav-item" role="presentation">
+    								<button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Last Accounts</button>
+  								</li>
+  								<li class="nav-item" role="presentation">
+    								<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Campaigns</button>
+  								</li>
+							</ul>
+						<div class="tab-content" id="myTabContent">
+  							<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">LAST ACCOUNTS TABLE</div>
+  							<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">CAMPAIGNS TABLE</div>
+							<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+						</div>
+      					</div>
+      				</div>
+    			</div>
+    			
+    			<div class="col-sm-8 p-2 border">
+      				<p>Reports.</p>
+   				</div>
+  			</div>
 		</div>
-    	
-		<!-- <ul>
-			<li><a class="active" href="Home.html">Home</a></li>
-			<li><a href="#campaign">Campaign</a></li>
-			<li class=dropdown><a href="#Commissions">Commissions</a>
-				<div class="dropdown-content">
-					<a href="#">Standard Audit</a>
-					<a href="#">Commissions Report</a>
-					<a href="#">Line-Item commissions</a>
-				</div>
-				</li>
-			<li class=dropdown><a href="#Analysis">Analysis</a>
-				<div class=dropdown-content>
-					<a href="RevenueAnalysis.html">Revenue Analysis</a>
-					<a href="#">Commission</a>
-					<a href="#">New Accounts</a>
-				</div>
-			</li>
-			<li class=dropdown><a href="#admin">Admin</a>
-			<div class=dropdown-content>
-					<a href="#">User Administration</a>
-					<a href="#">Client Portal Setup</a>
-					<a href="about.html">About</a>
-			</div>
-			</li>
-		</ul> -->
-
 	</body>
 </html>
