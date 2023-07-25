@@ -8,6 +8,12 @@
           <include name="Test_Piggy_Login"/>
         </methods>
       </class> <!-- TestLittlePiggy -->
+      <class name="TestHome">
+        <methods>
+          <include name="Home_Redirects_Home"/>
+          <include name="Test_NavMenu_isHidden"/>
+        </methods>
+      </class> <!-- TestHome -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
