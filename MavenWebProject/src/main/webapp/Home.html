@@ -13,16 +13,7 @@
 
   <!-- Your page content here -->
 
-  <script>
-    // Fetch the navigation.html content and insert it into the placeholder element
-    fetch('Navigation.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('navigation-placeholder').innerHTML = data;
-      })
-      .catch(error => {
-        console.error('Error fetching navigation: ', error);
-      });
+  <script src="getNavigationElements.js" type="text/javascript">
   </script>
 		<h4 class="p-2">HOME: ADVERTISING DASHBOARD</h4>
 		<div class="container mt-2">
