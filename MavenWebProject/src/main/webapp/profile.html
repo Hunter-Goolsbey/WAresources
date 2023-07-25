@@ -1,37 +1,51 @@
+
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-<body>
-<center>
-	<div class="container mt-3">
-	
-		<h1>Login</h1>
-		
+<html lang="en" data-bs-theme="light">
+	<head>
+		<!--  <link rel="stylesheet" href="appBoots.css">-->
+		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+		<title>Profile</title>
+	</head>
+	<body>
+		<div id="navigation-placeholder"></div>
+			<script>
+    // Fetch the navigation.html content and insert it into the placeholder element
+    fetch('Navigation.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navigation-placeholder').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Error fetching navigation: ', error);
+      });
+  			</script>
 		<form action="bigOink" method="post">
-			<table>
-			<center>
-			<div class="mb-3 mt-3">
-				<label for='username'>Username:</label>
-				<input type="text" name="username"/></th>
+			<div class="container p-4 my-4">
+  				<h1>Profile Settings</h1>
 			</div>
-			<center>
-			<div class="mb-3">
-				<label for='password'>Password:</label>
-				<input type="password" name="password"/></th>
+			<div class="container p-4 border">
+  				<h3>Update Email:</h3>
+  				<label for='email'>Email:</label>
+				<input type="text" name="username"/>
 			</div>
-				<tr>
-					<th></th>
-					<th><input type="submit" value="login"/></th>
-				</tr>
-			</table>
+			<div class="container p-4 border">
+  				<h3>Reset Password:</h3>
+  				<div class = "row p-1">
+  					<label for='oldPW'>Current Password:</label>
+					<input type="text" name="oldPW"/>
+				</div>
+				<div class="row p-1">
+					<label for='newPW'>New Password:</label>
+					<input type="text" name="newPW"/>
+				</div>
+				<div class="row p-1">
+					<label for='reenterPW'>Re-Enter Password:</label>
+					<input type="text" name="reenterPW"/>
+				</div>
+			</div>
 		</form>
-	</div>
-	</center>
-</body>
+	</body>
 </html>

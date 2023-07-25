@@ -21,6 +21,6 @@ public class bigOink extends HttpServlet {
     	response.setContentType("text/html");
     	response.sendRedirect("Home.html");
 		//doGet(request, response);
-	}
+    }
 
 }

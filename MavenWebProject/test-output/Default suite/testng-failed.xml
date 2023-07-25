@@ -5,7 +5,7 @@
     <classes>
       <class name="TestLittlePiggy">
         <methods>
-          <include name="tryMe"/>
+          <include name="Test_Piggy_Login"/>
         </methods>
       </class> <!-- TestLittlePiggy -->
     </classes>
