@@ -36,20 +36,18 @@
   			<div class="row">
     			<div class="col-sm-4 p-2 border">
     				<div class="row">
-    			 		<div class="input-group mb-3">
+    			 		<div class="input-group mb-3" id="myDropdown">
       						<!-- <label for='username' class="form-label-top">Customer Search:</label> -->
       						<input type="text" class="form-control" id="mySearch" onkeyup="myFunction()" placeholder="Search Garage">
-      						<ul id="myMenu">
-      <li style="display:none;"><a href="#">Porsche</a></li>
-      <li style="display:none;"><a href="#">Honda</a></li>
-      <li style="display:none;"><a href="#">Toyota</a></li>
-      <li style="display:none;"><a href="#">Hyundai</a></li>
-      <li style="display:none;"><a href="#">Ford</a></li>
-      <li style="display:none;"><a href="#">Chevrolete</a></li>
-      <li style="display:none;"><a href="#">Mazda</a></li>
-      <li style="display:none;"><a href="#">Pontiac</a></li>
-      <li style="display:none;"><a href="#">Mitsubishi</a></li>
-    </ul>
+      							<a style="display:none;" href="#">Porsche</a>
+      							<a style="display:none;" href="#">Honda</a>
+      							<a style="display:none;" href="#">Toyota</a>
+      							<a style="display:none;" href="#">Hyundai</a>
+      							<a style="display:none;" href="#">Ford</a>
+      							<a style="display:none;" href="#">Chevrolete</a>
+      							<a style="display:none;" href="#">Mazda</a>
+      							<a style="display:none;" href="#">Pontiac</a>
+      							<a style="display:none;" href="#">Mitsubishi</a>
       						<button class="btn btn-primary" type="submit">
       							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
   									<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -86,20 +84,20 @@ function myFunction() {
   var input, filter, ul, li, a, i;
   input = document.getElementById("mySearch");
   filter = input.value.toUpperCase();
-  ul = document.getElementById("myMenu");
-  li = ul.getElementsByTagName("li");
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+	 txtValue = a[i].textContent || a[i].innerText;
     if (filter.length > 0){
-      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-      	li[i].style.display = "";
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+    	  a[i].style.display = "";
       	}
       else {
-    	     li[i].style.display = "none";
+    	  a[i].style.display = "none";
     	  	}
     }
     else {
-     li[i].style.display = "none";
+    	a[i].style.display = "none";
   	}
   }
 }
