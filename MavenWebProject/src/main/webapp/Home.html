@@ -6,26 +6,7 @@
   		<meta name="viewport" content="width=device-width, initial-scale=1">
   		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
- 		<style>
- 		.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f6f6f6;
-  min-width: 230px;
-  overflow: auto;
-  border: 1px solid #ddd;
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown a:hover {background-color: #ddd;}
- 		</style>
+ 		
 		<title>Home</title>
 	</head>
 	<body>
@@ -55,18 +36,20 @@
   			<div class="row">
     			<div class="col-sm-4 p-2 border">
     				<div class="row">
-    			 		<div class="dropdown-content" id="myDropdown">
+    			 		<div class="input-group mb-3">
       						<!-- <label for='username' class="form-label-top">Customer Search:</label> -->
       						<input type="text" class="form-control" id="mySearch" onkeyup="myFunction()" placeholder="Search Garage">
-      							<a style="display:none;" href="#">Porsche</a>
-      							<a style="display:none;" href="#">Honda</a>
-      							<a style="display:none;" href="#">Toyota</a>
-      							<a style="display:none;" href="#">Hyundai</a>
-      							<a style="display:none;" href="#">Ford</a>
-      							<a style="display:none;" href="#">Chevrolete</a>
-      							<a style="display:none;" href="#">Mazda</a>
-      							<a style="display:none;" href="#">Pontiac</a>
-      							<a style="display:none;" href="#">Mitsubishi</a>
+      						<ul id="myMenu">
+      <li style="display:none;"><a href="#">Porsche</a></li>
+      <li style="display:none;"><a href="#">Honda</a></li>
+      <li style="display:none;"><a href="#">Toyota</a></li>
+      <li style="display:none;"><a href="#">Hyundai</a></li>
+      <li style="display:none;"><a href="#">Ford</a></li>
+      <li style="display:none;"><a href="#">Chevrolete</a></li>
+      <li style="display:none;"><a href="#">Mazda</a></li>
+      <li style="display:none;"><a href="#">Pontiac</a></li>
+      <li style="display:none;"><a href="#">Mitsubishi</a></li>
+    </ul>
       						<button class="btn btn-primary" type="submit">
       							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
   									<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -103,20 +86,20 @@ function myFunction() {
   var input, filter, ul, li, a, i;
   input = document.getElementById("mySearch");
   filter = input.value.toUpperCase();
-  div = document.getElementById("myDropdown");
-  a = div.getElementsByTagName("a");
-  for (i = 0; i < a.length; i++) {
-	 txtValue = a[i].textContent || a[i].innerText;
+  ul = document.getElementById("myMenu");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
     if (filter.length > 0){
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-    	  a[i].style.display = "";
+      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      	li[i].style.display = "";
       	}
       else {
-    	  a[i].style.display = "none";
+    	     li[i].style.display = "none";
     	  	}
     }
     else {
-    	a[i].style.display = "none";
+     li[i].style.display = "none";
   	}
   }
 }
