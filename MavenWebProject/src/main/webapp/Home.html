@@ -179,11 +179,11 @@ function myFunction() {
   input = document.getElementById("mySearch");
   filter = input.value.toUpperCase();
   ul = document.getElementById("myMenu");
-  li = ul.getElementsByTagName("li");
+  li = ul.getElementsByTagName("h4");
   for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
+    //a = li[i].getElementsByTagName("a")[0];
     if (filter.length > 0){
-      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      if (li[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
       	li[i].style.display = "";
       	}
       else {
