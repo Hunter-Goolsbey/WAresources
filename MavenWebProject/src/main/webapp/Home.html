@@ -36,9 +36,14 @@ var settings = {
 			}
 // 			response = response.getElementsByTagName("Value")[7];
 // 			var xmlString = new XMLSerializer().serializeToString(response)
- 		  $("#vehicleMake-info").text(makeValue);
- 		 $("#vehicleCylinder-info").text(cylinderValue);
-		});
+			return {
+				"make":makeValue,
+				"cylinder":cylinderValue
+				};
+			});
+			$("#vehicleMake-info_01").text(makeValue);
+			$("#vehicleMake-info_02").text(makeValue);
+		 	$("#vehicleCylinder-info").text(cylinderValue);
 </script>
  		
 		<title>Home</title>
@@ -137,7 +142,7 @@ var settings = {
 				<div class="card">
     				<div class="card-body">
       					<h4 class="card-title">Leroy</h4>
-      					<p class="card-text" id="vehicleMake-info"></p>
+      					<p class="card-text" id="vehicleMake-info_01"></p>
       					<p class="card-text">Milage: 170,000</p>
       					<p class="card-text">Drive: Front-Wheel</p>
       					<a href="#" class="btn btn-primary">Details</a>
@@ -155,7 +160,7 @@ var settings = {
 				<div class="card">
     				<div class="card-body">
       					<h4 class="card-title">Leroy</h4>
-      					<p class="card-text" id="vehicleMake-info"></p>
+      					<p class="card-text" id="vehicleMake-info_02"></p>
       					<p class="card-text">Milage: 170,000</p>
       					<p class="card-text">Drive: Front-Wheel</p>
       					<a href="#" class="btn btn-primary">Details</a>
