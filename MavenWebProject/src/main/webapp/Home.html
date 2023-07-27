@@ -9,7 +9,7 @@
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   		<script>
 var settings = {
-		  "url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/5UXWX7C5*BA?format=xml",
+		  "url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/5UXWX7C5*BA?format=json",
 		  "method": "GET",
 		  "timeout": 0,
 		  "headers": {
@@ -18,9 +18,18 @@ var settings = {
 
 		$.ajax(settings).done(function (response) {
 			console.log(response);
-			response = response.getElementsByTagName("Value")[7];
-			var xmlString = new XMLSerializer().serializeToString(response)
-		  $("#vehicle-info").text(xmlString);
+			var resultsArray = response.Results;
+
+			// Loop through the array to find the object with 'Variable' equal to 'Make'
+			for (var i = 0; i < resultsArray.length; i++) {
+			  if (resultsArray[i].Variable === "Make") {
+			    var makeValue = resultsArray[i].Value;
+			    console.log(makeValue); // Output: "BMW"
+			    break; // Exit the loop since we found the 'Make' property
+			  }
+// 			response = response.getElementsByTagName("Value")[7];
+// 			var xmlString = new XMLSerializer().serializeToString(response)
+// 		  $("#vehicle-info").text(xmlString);
 		});
 </script>
  		
