@@ -138,6 +138,7 @@
   		</div>
   		</div>
   		</div>
+  		<div id="vehicle-info"></div>
 		<script>
 function myFunction() {
   var input, filter, ul, li, a, i;
@@ -172,7 +173,7 @@ var settings = {
 		};
 
 		$.ajax(settings).done(function (response) {
-		  console.log(response);
+		  $("#vehicle-info").text(response);
 		});
 </script>
 	</body>
