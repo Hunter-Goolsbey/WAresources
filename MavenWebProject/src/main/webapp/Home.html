@@ -118,7 +118,7 @@ var settings = {
 		<div id="cards" class="container">
 			<div class="row card-container" id="myMenu"><!-- style="width:45vw" -->
 				<div class="col-md-4">
-				<div class="card">
+				<div class="card searchMe">
     				<div class="card-body">
       					<h4 class="card-title">Jane Doe</h4>
       					<p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>
@@ -134,7 +134,7 @@ var settings = {
 				</div>
   			</div>
   			<div class="col-md-4">
-				<div class="card">
+				<div class="card searchMe">
     				<div class="card-body">
       					<h4 class="card-title" >Leroy</h4>
       					<p class="card-text" id="vehicleMake-info"></p>
@@ -152,7 +152,7 @@ var settings = {
   			</div>
   			</div>
   			<div class="col-md-4">
-				<div class="card">
+				<div class="card searchMe">
     			<div class="card-body">
       				<h4 class="card-title">Leroy</h4>
       				<p class="card-text">Mazda Protoge</p>
@@ -184,14 +184,14 @@ function myFunction() {
     //a = li[i].getElementsByTagName("a")[0];
     if (filter.length > 0){
       if (li[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-      	li[i].style.display = "";
+    	  ul.getElementsByClassName("searchMe")[i].style.display = "";
       	}
       else {
-    	     li[i].style.display = "none";
+    	  ul.getElementsByClassName("searchMe")[i].style.display = "none";
     	  	}
     }
     else {
-     li[i].style.display = "none";
+    	ul.getElementsByClassName("searchMe")[i].style.display = "none";
   	}
   }
 }
