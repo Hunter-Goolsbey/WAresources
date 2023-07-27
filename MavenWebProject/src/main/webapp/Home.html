@@ -16,7 +16,7 @@ var settings = {
 		  },
 		};
 
-		$.ajax(settings).done(function h(response) {
+		$.ajax(settings).done(function (response) {
 			console.log(response);
 			var resultsArray = response.Results;
 
@@ -36,14 +36,9 @@ var settings = {
 			}
 // 			response = response.getElementsByTagName("Value")[7];
 // 			var xmlString = new XMLSerializer().serializeToString(response)
-			return {
-				"make":makeValue,
-				"cylinder":cylinderValue
-				};
-			});
-			$("#vehicleMake-info_01").text(h()[0]);
-			$("#vehicleMake-info_02").text(h()[0]);
-		 	$("#vehicleCylinder-info").text(h()[1]);
+ 		  $("#vehicleMake-info").text(makeValue);
+ 		 $("#vehicleCylinder-info").text(cylinderValue);
+		});
 </script>
  		
 		<title>Home</title>
@@ -141,8 +136,8 @@ var settings = {
   			<div class="col-md-4">
 				<div class="card">
     				<div class="card-body">
-      					<h4 class="card-title">Leroy</h4>
-      					<p class="card-text" id="vehicleMake-info_01"></p>
+      					<h4 class="card-title" >Leroy</h4>
+      					<p class="card-text" id="vehicleMake-info"></p>
       					<p class="card-text">Milage: 170,000</p>
       					<p class="card-text">Drive: Front-Wheel</p>
       					<a href="#" class="btn btn-primary">Details</a>
@@ -158,14 +153,14 @@ var settings = {
   			</div>
   			<div class="col-md-4">
 				<div class="card">
-    				<div class="card-body">
-      					<h4 class="card-title">Leroy</h4>
-      					<p class="card-text" id="vehicleMake-info_02"></p>
-      					<p class="card-text">Milage: 170,000</p>
-      					<p class="card-text">Drive: Front-Wheel</p>
-      					<a href="#" class="btn btn-primary">Details</a>
-      					<a href="#" class="btn btn-primary">Services</a>
-    				</div>
+    			<div class="card-body">
+      				<h4 class="card-title">Leroy</h4>
+      				<p class="card-text">Mazda Protoge</p>
+      				<p class="card-text">Milage: 170,000</p>
+      				<p class="card-text">Drive: Front-Wheel</p>
+      				<a href="#" class="btn btn-primary">Details</a>
+      				<a href="#" class="btn btn-primary">Services</a>
+    			</div>
     			<div style="text-align: center">
     				<svg xmlns="http://www.w3.org/2000/svg" width="50%" height="50%" fill="currentColor" class="bi bi-car-front" viewBox="0 0 16 16">
   						<path d="M4 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM4.862 4.276 3.906 6.19a.51.51 0 0 0 .497.731c.91-.073 2.35-.17 3.597-.17 1.247 0 2.688.097 3.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 10.691 4H5.309a.5.5 0 0 0-.447.276Z"/>
