@@ -18,7 +18,8 @@ var settings = {
 
 		$.ajax(settings).done(function (response) {
 			console.log(response);
-		  $("#vehicle-info").text(response);
+			var xmlString = new XMLSerializer().serializeToString(response)
+		  $("#vehicle-info").text(xmlString);
 		});
 </script>
  		
