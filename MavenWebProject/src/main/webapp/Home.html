@@ -7,6 +7,21 @@
   		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   		<script src="jquery-3.6.4.min.js"></script>
+  		<script>
+var settings = {
+		  "url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/5UXWX7C5*BA?format=json",
+		  "method": "GET",
+		  "timeout": 0,
+		  "headers": {
+		    "Cookie": "ak_bmsc=301E8E3673B0D2186682825BF9C626A8~000000000000000000000000000000~YAAQnb8mF4DhGW+JAQAAiOlDmBRPRloml7pzW4HBDBOimdu7gyZtMPNnTS7NzMAdUNMCpmBkb4R3eRpYrDO1FjhD5A4AwGWBgP0bhhtYl4uWHHDc2rEZodaDkTdfF6SSHJNYW+S3JccunRV+QOORq1ikOcbdGPxs9FmPo1PkkiCy3PzSwzkb66Nnm228OL6g/TabxuBLvMda7wn241XvjkcC37d9rXZbyD82lXMwQAmkCgdrARVsf1jEPRiCtpp6246AdWeuzG9yW9Cf1FgutxyU87rnuPOe2NehfmjDSnlh+bu7mYz7saknoRdBf+8w0z26NE6k5RnezoRC5F1AfEp9A/mzq/4rWdmtpG6XnlAHVmtNBlC84Va2WluNEtyw"
+		  },
+		};
+
+		$.ajax(settings).done(function (response) {
+			console.log(response);
+		  $("#vehicle-info").text(response);
+		});
+</script>
  		
 		<title>Home</title>
 	</head>
@@ -162,19 +177,6 @@ function myFunction() {
   }
 }
 </script>
-<script>
-var settings = {
-		  "url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/5UXWX7C5*BA?format=json",
-		  "method": "GET",
-		  "timeout": 0,
-		  "headers": {
-		    "Cookie": "ak_bmsc=301E8E3673B0D2186682825BF9C626A8~000000000000000000000000000000~YAAQnb8mF4DhGW+JAQAAiOlDmBRPRloml7pzW4HBDBOimdu7gyZtMPNnTS7NzMAdUNMCpmBkb4R3eRpYrDO1FjhD5A4AwGWBgP0bhhtYl4uWHHDc2rEZodaDkTdfF6SSHJNYW+S3JccunRV+QOORq1ikOcbdGPxs9FmPo1PkkiCy3PzSwzkb66Nnm228OL6g/TabxuBLvMda7wn241XvjkcC37d9rXZbyD82lXMwQAmkCgdrARVsf1jEPRiCtpp6246AdWeuzG9yW9Cf1FgutxyU87rnuPOe2NehfmjDSnlh+bu7mYz7saknoRdBf+8w0z26NE6k5RnezoRC5F1AfEp9A/mzq/4rWdmtpG6XnlAHVmtNBlC84Va2WluNEtyw"
-		  },
-		};
 
-		$.ajax(settings).done(function (response) {
-		  $("#vehicle-info").text(response);
-		});
-</script>
 	</body>
 </html>
