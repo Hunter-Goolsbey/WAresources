@@ -25,7 +25,10 @@ var settings = {
 			  if (resultsArray[i].Variable === "Make") {
 			    var makeValue = resultsArray[i].Value;
 			    console.log(makeValue); // Output: "BMW"
-			    break; // Exit the loop since we found the 'Make' property
+			  }
+			  if (resultsArray[i].Variable === "Engine Number of Cylinders"){
+				var cylinderValue = resultsArray[i].Value;
+			    //break; // Exit the loop since we found the 'Make' property
 			  }
 			  }
 // 			response = response.getElementsByTagName("Value")[7];
