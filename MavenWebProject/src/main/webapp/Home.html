@@ -16,7 +16,7 @@ var settings = {
 		  },
 		};
 
-		$.ajax(settings).done(function (response) {
+		$.ajax(settings).done(function h(response) {
 			console.log(response);
 			var resultsArray = response.Results;
 
@@ -41,9 +41,9 @@ var settings = {
 				"cylinder":cylinderValue
 				};
 			});
-			$("#vehicleMake-info_01").text(makeValue);
-			$("#vehicleMake-info_02").text(makeValue);
-		 	$("#vehicleCylinder-info").text(cylinderValue);
+			$("#vehicleMake-info_01").text(h()[0]);
+			$("#vehicleMake-info_02").text(h()[0]);
+		 	$("#vehicleCylinder-info").text(h()[1]);
 </script>
  		
 		<title>Home</title>
