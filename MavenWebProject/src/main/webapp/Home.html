@@ -25,12 +25,15 @@ var settings = {
 			  if (resultsArray[i].Variable === "Make") {
 			    var makeValue = resultsArray[i].Value;
 			    console.log(makeValue); // Output: "BMW"
+			    break; // Exit the loop since we found the 'Make' property
 			  }
+			}
+			for (var i = 0; i < resultsArray.length; i++) {
 			  if (resultsArray[i].Variable === "Engine Number of Cylinders"){
 				var cylinderValue = resultsArray[i].Value;
-			    //break; // Exit the loop since we found the 'Make' property
+			    break; 
 			  }
-			  }
+			 }
 // 			response = response.getElementsByTagName("Value")[7];
 // 			var xmlString = new XMLSerializer().serializeToString(response)
  		  $("#vehicleMake-info").text(makeValue);
