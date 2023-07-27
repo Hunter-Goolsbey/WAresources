@@ -18,6 +18,7 @@ var settings = {
 
 		$.ajax(settings).done(function (response) {
 			console.log(response);
+			response = response.getElementsByTagName("Variable")[0];
 			var xmlString = new XMLSerializer().serializeToString(response)
 		  $("#vehicle-info").text(xmlString);
 		});
