@@ -39,7 +39,7 @@ public class littlePiggy extends HttpServlet {
 				// System.out.println(Integer.toString(2+2));
 			} else {
 				//response.sendRedirect("https://google.com");
-				response.getWriter().println("wrong username and password");
+				response.getWriter().println("<h1>wrong username and password</h1>");
 			}
 			con.close();
 		} catch (Exception e) {
