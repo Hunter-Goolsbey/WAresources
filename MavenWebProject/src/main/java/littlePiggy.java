@@ -30,7 +30,7 @@ public class littlePiggy extends HttpServlet {
 		String location = System.getenv("SQLLOCATION");
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://18.235.221.130:3306/HelloWorld", "ducky", pw);
+			Connection con = DriverManager.getConnection("jdbc:mysql://" + location + ":3306/helloworld", "ducky", pw);
 			Statement stm = con.createStatement();
 			ResultSet rs = stm.executeQuery(
 					"select * from UserCredentials where Username='" + username + "'and Password='" + password + "';");
