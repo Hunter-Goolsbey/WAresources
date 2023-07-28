@@ -38,7 +38,8 @@ public class littlePiggy extends HttpServlet {
 				response.sendRedirect("Home.html");
 				// System.out.println(Integer.toString(2+2));
 			} else {
-				response.getWriter().println("wrong username and password");
+				response.sendRedirect("http://google.com");
+				//response.getWriter().println("wrong username and password");
 			}
 			con.close();
 		} catch (Exception e) {
