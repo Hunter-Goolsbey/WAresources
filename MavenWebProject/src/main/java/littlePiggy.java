@@ -30,7 +30,7 @@ public class littlePiggy extends HttpServlet {
 		String location = System.getenv("SQLLOCATION");
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://18.235.221.130:3306/helloworld", "ducky", pw);
+			Connection con = DriverManager.getConnection("jdbc:mysql://" + location + ":3306/helloworld", "ducky", pw);
 			Statement stm = con.createStatement();
 			ResultSet rs = stm.executeQuery(
 					"select * from UserCredentials where Username='" + username + "'and Password='" + password + "';");
@@ -38,8 +38,8 @@ public class littlePiggy extends HttpServlet {
 				response.sendRedirect("Home.html");
 				// System.out.println(Integer.toString(2+2));
 			} else {
-				response.sendRedirect("https://google.com");
-				//response.getWriter().println("wrong username and password");
+				//response.sendRedirect("https://google.com");
+				response.getWriter().println("wrong username and password");
 			}
 			con.close();
 		} catch (Exception e) {
@@ -47,7 +47,7 @@ public class littlePiggy extends HttpServlet {
 			//System.out.println("Connection not Made");
 			response.getWriter().println(e);
 			//response.getWriter().println(pw);
-			System.out.println(e);
+			//System.out.println(e);
 		}
 	}
 }
