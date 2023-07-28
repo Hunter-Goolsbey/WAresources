@@ -44,7 +44,8 @@ public class littlePiggy extends HttpServlet {
 			con.close();
 		} catch (Exception e) {
 			// response.sendRedirect("Home.html");
-			System.out.println("Connection not Made");
+			//System.out.println("Connection not Made");
+			response.getWriter().println(e);
 			System.out.println(e);
 		}
 	}
