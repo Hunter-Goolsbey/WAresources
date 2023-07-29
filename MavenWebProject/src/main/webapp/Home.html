@@ -160,7 +160,7 @@
       			<label for="carVin">Vin Number:</label>
       			<input type="text" class="form-control" id="vin" placeholder="VIN" name="vin">
     		</div>
-    		<div id="vehicleMake-info"></div>
+    		
     		<div class="form-check mb-3">
       			<label class="form-check-label">
         			<input class="form-check-input" type="checkbox" name="remember"> Remember me
@@ -168,6 +168,7 @@
     		</div>
     		<button id="submitBtn" class="btn btn-primary">Submit</button>
   		</form>
+  		<div id="vehicleMake-info"></div>
 	</div>
     </div>
   </div>
@@ -197,41 +198,44 @@ function myFunction() {
 }
 </script>
 <script>
-  		document.getElementById("submitBtn").addEventListener("click", function () {
-  		  var inpt = document.getElementById("vinInput").value;
-  		  var settings = {
-  		    "url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/" + inpt + "?format=json",
-  		    "method": "GET",
-  		    "timeout": 0,
-  		    "headers": {},
-  		  };
+document.addEventListener("click", function (event) {
+	  // Check if the click event originated from the "vinInput" element
+	  if (event.target.id !== "vin") {
+	    var inpt = document.getElementById("vin").value;
+	    var settings = {
+	      "url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/" + inpt + "?format=json",
+	      "method": "GET",
+	      "timeout": 0,
+	      "headers": {},
+	    };
 
-  		  $.ajax(settings).done(function (response) {
-  		    console.log(response);
-  		    var resultsArray = response.Results;
+	    $.ajax(settings).done(function (response) {
+	      console.log(response);
+	      var resultsArray = response.Results;
 
-  		    // Loop through the array to find the object with 'Variable' equal to 'Make'
-  		    var makeValue = ""; // Initialize makeValue
-  		    for (var i = 0; i < resultsArray.length; i++) {
-  		      if (resultsArray[i].Variable === "Make") {
-  		        makeValue = resultsArray[i].Value; // Assign value to makeValue
-  		        console.log(makeValue); // Output: "BMW"
-  		        break; // Exit the loop since we found the 'Make' property
-  		      }
-  		    }
+	      // Loop through the array to find the object with 'Variable' equal to 'Make'
+	      var makeValue = ""; // Initialize makeValue
+	      for (var i = 0; i < resultsArray.length; i++) {
+	        if (resultsArray[i].Variable === "Make") {
+	          makeValue = resultsArray[i].Value; // Assign value to makeValue
+	          console.log(makeValue); // Output: "BMW"
+	          break; // Exit the loop since we found the 'Make' property
+	        }
+	      }
 
-  		    // Similarly, find the value for "Engine Number of Cylinders"
-  		    var cylinderValue = ""; // Initialize cylinderValue
-  		    for (var i = 0; i < resultsArray.length; i++) {
-  		      if (resultsArray[i].Variable === "Engine Number of Cylinders") {
-  		        cylinderValue = resultsArray[i].Value; // Assign value to cylinderValue
-  		        break;
-  		      }
-  		    }
+	      // Similarly, find the value for "Engine Number of Cylinders"
+	      var cylinderValue = ""; // Initialize cylinderValue
+	      for (var i = 0; i < resultsArray.length; i++) {
+	        if (resultsArray[i].Variable === "Engine Number of Cylinders") {
+	          cylinderValue = resultsArray[i].Value; // Assign value to cylinderValue
+	          break;
+	        }
+	      }
 
-  		    $("#vehicleMake-info").text(makeValue);
-  		  });
-  		});
+	      $("#vehicleMake-info").text(makeValue);
+	    });
+	  }
+	});
 </script>
 
 	</body>
