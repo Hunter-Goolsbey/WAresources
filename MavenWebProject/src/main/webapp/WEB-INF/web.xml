@@ -1,17 +1,24 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
-
-<web-app>
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:web="http://xmlns.jcp.org/xml/ns/javaee">
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
-  	<servlet-name>littlePiggy</servlet-name>
-  	<display-name>littlePiggy</display-name>
-  	<description></description>
-  	<servlet-class>littlePiggy</servlet-class>
+    <description></description>
+    <display-name>littlePiggy</display-name>
+    <servlet-name>littlePiggy</servlet-name>
+    <servlet-class>littlePiggy</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>littlePiggy</servlet-name>
-  	<url-pattern>/littlePiggy</url-pattern>
+    <servlet-name>littlePiggy</servlet-name>
+    <url-pattern>/littlePiggy</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>mediumHog</display-name>
+    <servlet-name>mediumHog</servlet-name>
+    <servlet-class>mediumHog</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>mediumHog</servlet-name>
+    <url-pattern>/mediumHog</url-pattern>
   </servlet-mapping>
 </web-app>
