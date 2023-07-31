@@ -9,23 +9,24 @@ import org.openqa.selenium.By;
 
 public class TestHome {
 	SeleniumConfig SelenSetup = new SeleniumConfig();
-			
-  @Test
-  public void test_Home_isCollapsed() throws InterruptedException {
-	  WebDriver driver = SelenSetup.driverSetup();
-	  driver.get("http://34.193.84.77:8080/MavenWebProject/Home.html");
-	  driver.findElement(By.xpath("/html//div[@id='accordion']//a[@href='#collapseOne']")).click();
-	  Thread.sleep(2000);
-	  driver.findElement(By.xpath("/html//div[@id='accordion']//a[@href='#collapseOne']")).click();
-	  assertEquals(driver.findElement(By.xpath("/html//div[@id='accordion']//a[@href='#collapseOne']")).getAttribute("class"), "btn collapsed");
-	  driver.quit();
-  }
+	
+	//Functionality has been removed from Home page
+//  @Test
+//  public void test_Home_isCollapsed() throws InterruptedException {
+//	  WebDriver driver = SelenSetup.driverSetup();
+//	  driver.get("http://34.193.84.77:8080/MavenWebProject/Home.html");
+//	  driver.findElement(By.xpath("/html//div[@id='accordion']//a[@href='#collapseOne']")).click();
+//	  Thread.sleep(2000);
+//	  driver.findElement(By.xpath("/html//div[@id='accordion']//a[@href='#collapseOne']")).click();
+//	  assertEquals(driver.findElement(By.xpath("/html//div[@id='accordion']//a[@href='#collapseOne']")).getAttribute("class"), "btn collapsed");
+//	  driver.quit();
+//  }
   
   @Test
   public void Test_NavMenu_isHidden() {
 	  WebDriver driver = SelenSetup.driverSetup();
 	  driver.get("http://34.193.84.77:8080/MavenWebProject/Home.html");
-	  assertFalse(driver.findElement(By.cssSelector(".offcanvas-title")).isDisplayed());
+	  assertFalse(driver.findElement(By.cssSelector(".offcanvas offcanvas-end show")).isDisplayed());
 	  driver.findElement(By.cssSelector("[data-bs-toggle='offcanvas']")).click();
 	  driver.quit();
   }
