@@ -240,15 +240,30 @@ document.addEventListener("click", function (event) {
 	});
 </script>
 <script>
+//Check for user preference and set the theme accordingly
+function setThemeOnLoad() {
+    if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.setAttribute('data-bs-theme', 'dark');
+        document.getElementById('btnSwitch').checked = true;
+    } else {
+        document.documentElement.setAttribute('data-bs-theme', 'light');
+        document.getElementById('btnSwitch').checked = false;
+    }
+}
+
+// Toggle between dark and light mode
 function toggleDarkMode() {
-    const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    const darkModeEnabled = document.getElementById('btnSwitch').checked;
+    const newTheme = darkModeEnabled ? 'dark' : 'light';
     document.documentElement.setAttribute('data-bs-theme', newTheme);
     localStorage.setItem('theme', newTheme);
 }
 
-// Attach event listener to the button
-document.getElementById('btnSwitch').addEventListener('click', toggleDarkMode);
+// Attach event listener to the checkbox
+document.getElementById('btnSwitch').addEventListener('change', toggleDarkMode);
+
+// Set theme on page load
+setThemeOnLoad();
 </script>
 
 	</body>
