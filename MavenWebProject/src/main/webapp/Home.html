@@ -240,14 +240,15 @@ document.addEventListener("click", function (event) {
 	});
 </script>
 <script>
-document.getElementById('btnSwitch').addEventListener('click',()=>{
-    if (document.documentElement.getAttribute('data-bs-theme') == 'dark') {
-        document.documentElement.setAttribute('data-bs-theme','light')
-    }
-    else {
-        document.documentElement.setAttribute('data-bs-theme','dark')
-    }
-})
+function toggleDarkMode() {
+    const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-bs-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+}
+
+// Attach event listener to the button
+document.getElementById('btnSwitch').addEventListener('click', toggleDarkMode);
 </script>
 
 	</body>
