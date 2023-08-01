@@ -3,15 +3,9 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestLittlePiggy">
-        <methods>
-          <include name="Test_Piggy_Login"/>
-        </methods>
-      </class> <!-- TestLittlePiggy -->
       <class name="TestHome">
         <methods>
-          <include name="Home_Redirects_Home"/>
-          <include name="Test_NavMenu_isHidden"/>
+          <include name="addVehicle"/>
         </methods>
       </class> <!-- TestHome -->
     </classes>
