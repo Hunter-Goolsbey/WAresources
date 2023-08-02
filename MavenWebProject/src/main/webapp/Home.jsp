@@ -26,6 +26,7 @@ connection = DriverManager.getConnection(connectionUrl+database, userid, passwor
 statement=connection.createStatement();
 String sql ="select * from vehicles where vehicleID = 1";
 resultSet = statement.executeQuery(sql);
+while(resultSet.next()){
 %>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
@@ -208,6 +209,7 @@ resultSet = statement.executeQuery(sql);
 
 
 <%
+}
 connection.close();
 } catch (Exception e) {
 e.printStackTrace();
