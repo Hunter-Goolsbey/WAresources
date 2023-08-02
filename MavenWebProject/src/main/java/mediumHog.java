@@ -34,15 +34,10 @@ public class mediumHog extends HttpServlet {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://" + location + ":3306/myGarage", "ducky", pw);
 			Statement stm = con.createStatement();
-			ResultSet rs = stm.executeQuery(
-					"INSERT INTO vehicles (vehicleID, vehicleName, VIN, Make) VALUES (2, '" + vehicle + "', '" + vinNum + "', '" + make + "';");
-			if (rs.next()) {
-				response.sendRedirect("Home.html");
+			String insertQuery = "INSERT INTO vehicles (vehicleID, vehicleName, VIN, Make) VALUES (2, '" + vehicle + "', '" + vinNum + "', '" + make + "';";
+			stm.executeUpdate(insertQuery);
+			response.sendRedirect("Home.html");
 				// System.out.println(Integer.toString(2+2));
-			} else {
-				//response.sendRedirect("https://google.com");
-				response.getWriter().println("<h1>Wrong username and password</h1>");
-			}
 			con.close();
 			
     	} catch (Exception e) {
