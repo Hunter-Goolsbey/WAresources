@@ -1,5 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%
+String id = request.getParameter("userid");
+String driver = "com.mysql.jdbc.Driver";
+String connectionUrl = "jdbc:mysql://18.235.221.130:3306/";
+String database = "myGarage";
+String userid = "ducky";
+String password = "roundabout";
+try {
+Class.forName(driver);
+} catch (ClassNotFoundException e) {
+e.printStackTrace();
+}
+Connection connection = null;
+Statement statement = null;
+ResultSet resultSet = null;
+%>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 	<head>
@@ -177,6 +197,39 @@
     </div>
   </div>
 </div>
+
+<table border="1">
+<tr>
+<td>first name</td>
+<td>last name</td>
+<td>City name</td>
+<td>Email</td>
+
+</tr>
+<%
+try{
+connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+statement=connection.createStatement();
+String sql ="select * from vehicles";
+resultSet = statement.executeQuery(sql);
+while(resultSet.next()){
+%>
+<tr>
+<td><%=resultSet.getString("vehicleID") %></td>
+<td><%=resultSet.getString("vehicleName") %></td>
+<td><%=resultSet.getString("VIN") %></td>
+<td><%=resultSet.getString("Make") %></td>
+
+</tr>
+<%
+}
+connection.close();
+} catch (Exception e) {
+e.printStackTrace();
+}
+%>
+</table> 
+
   		
 		<script>
 function myFunction() {
