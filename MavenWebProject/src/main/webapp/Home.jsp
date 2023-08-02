@@ -123,7 +123,7 @@ while(resultSet.next()){
 				<div class="card">
     				<div class="card-body">
       					<h4 class="card-title"><%=resultSet.getString("vehicleName") %></h4>
-      					<p class="card-text"><%=resultSet.getString("VIN") %></p>
+      					<p class="card-text">VIN: <%=resultSet.getString("VIN") %></p>
       					<a href="#" class="btn btn-primary"><%=resultSet.getString("Make") %></a>
       					<a href="#" class="btn btn-primary">Services</a>
     				</div>
