@@ -43,7 +43,7 @@ public class littlePiggy extends HttpServlet {
 			}
 			con.close();
 		} catch (Exception e) {
-			// response.sendRedirect("Home.html");
+			// response.sendRedirect("Home.jsp");
 			//System.out.println("Connection not Made");
 			response.getWriter().println(e);
 			//response.getWriter().println(pw);
