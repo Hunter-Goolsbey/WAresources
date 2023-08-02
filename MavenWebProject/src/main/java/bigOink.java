@@ -19,7 +19,7 @@ public class bigOink extends HttpServlet {
     @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	response.setContentType("text/html");
-    	response.sendRedirect("Home.html");
+    	response.sendRedirect("Home.jsp");
 		//doGet(request, response);
     }
 

@@ -35,7 +35,7 @@ public class littlePiggy extends HttpServlet {
 			ResultSet rs = stm.executeQuery(
 					"select * from UserCredentials where Username='" + username + "'and Password='" + password + "';");
 			if (rs.next()) {
-				response.sendRedirect("Home.html");
+				response.sendRedirect("Home.jsp");
 				// System.out.println(Integer.toString(2+2));
 			} else {
 				//response.sendRedirect("https://google.com");

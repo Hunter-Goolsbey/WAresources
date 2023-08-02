@@ -16,14 +16,14 @@ public class TestHome {
 	
 	//SeleniumConfig SelenSetup = new SeleniumConfig();
 	WebDriver driver = SeleniumConfig.driverSetup();
-	String home = "http://34.193.84.77:8080/MavenWebProject/Home.html";
+	String home = "http://34.193.84.77:8080/MavenWebProject/Home.jsp";
 	
 	//RM: Function no longer included
 //  @Test
 //  public void test_Home_isCollapsed() throws InterruptedException {
 	//*Test to see if collapsable paine is-collapsed on-load*
 //	  WebDriver driver = SelenSetup.driverSetup();
-//	  driver.get("http://34.193.84.77:8080/MavenWebProject/Home.html");
+//	  driver.get("http://34.193.84.77:8080/MavenWebProject/Home.jsp");
 //	  driver.findElement(By.xpath("/html//div[@id='accordion']//a[@href='#collapseOne']")).click();
 //	  Thread.sleep(2000);
 //	  driver.findElement(By.xpath("/html//div[@id='accordion']//a[@href='#collapseOne']")).click();

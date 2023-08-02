@@ -36,12 +36,12 @@ public class mediumHog extends HttpServlet {
 			Statement stm = con.createStatement();
 			String insertQuery = "INSERT INTO vehicles (vehicleName, VIN, Make) VALUES ('" + vehicle + "', '" + vinNum + "', '" + make + "');";
 			stm.executeUpdate(insertQuery);
-			response.sendRedirect("Home.html");
+			response.sendRedirect("Home.jsp");
 				// System.out.println(Integer.toString(2+2));
 			con.close();
 			
     	} catch (Exception e) {
-			// response.sendRedirect("Home.html");
+			// response.sendRedirect("Home.jsp");
 			//System.out.println("Connection not Made");
 			response.getWriter().println(e);
 			//response.getWriter().println(pw);

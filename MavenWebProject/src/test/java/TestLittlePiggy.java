@@ -13,7 +13,7 @@ public class TestLittlePiggy {
 	public void Test_Piggy_Login() throws InterruptedException {
 		Test_Login logMeIn = new Test_Login();
 		WebDriver driver = logMeIn.Login();
-		assertEquals((String)driver.getCurrentUrl(), "http://34.193.84.77:8080/MavenWebProject/Home.html");
+		assertEquals((String)driver.getCurrentUrl(), "http://34.193.84.77:8080/MavenWebProject/Home.jsp");
 		driver.quit();
 	}
 	
