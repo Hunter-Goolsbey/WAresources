@@ -34,7 +34,7 @@ public class mediumHog extends HttpServlet {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://" + location + ":3306/myGarage", "ducky", pw);
 			Statement stm = con.createStatement();
-			String insertQuery = "INSERT INTO vehicles (vehicleID, vehicleName, VIN, Make) VALUES (2, '" + vehicle + "', '" + vinNum + "', '" + make + "';";
+			String insertQuery = "INSERT INTO vehicles (vehicleID, vehicleName, VIN, Make) VALUES (2, '" + vehicle + "', '" + vinNum + "', '" + make + "');";
 			stm.executeUpdate(insertQuery);
 			response.sendRedirect("Home.html");
 				// System.out.println(Integer.toString(2+2));
