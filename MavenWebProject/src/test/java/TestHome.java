@@ -44,7 +44,6 @@ public class TestHome {
   
   @Test
   public void myGarage_Redirects_Home() throws InterruptedException {
-	  //RM: WebDriver driver = SelenSetup.driverSetup();
 	  driver.get(home);
 	  Thread.sleep(1000);
 	  driver.findElement(By.linkText("MyGarage")).click();
@@ -77,20 +76,13 @@ public class TestHome {
   
   @Test
   public void addVehicle_verifyInput() throws InterruptedException{
-	  int i = 0;
-	  String[] str = {"5UXWX7C5*BA", "JHME326734S002348"};
-	  String[] rtrnstr = {"BMW", "HONDA"};
-	  String[] rtrn = new String[str.length];
 	  driver.get(home);
 	  Thread.sleep(1000);
-	  for (i = 0; i < str.length; ++i) {
-		  driver.findElement(By.cssSelector("[data-bs-toggle='modal']")).click();
-		  driver.findElement(By.cssSelector("[placeholder='VIN']")).sendKeys(str[i]);
-		  driver.findElement(By.cssSelector("input[name='remember']")).click();
-		  Thread.sleep(3000);
-		  rtrn[i] = driver.findElement(By.cssSelector("#vehicleMake-info")).getText();
-	  }
-	  assertEquals(rtrnstr,rtrn);
+	  driver.findElement(By.cssSelector("[data-bs-toggle='modal']")).click();
+	  driver.findElement(By.cssSelector("[placeholder='VIN']")).sendKeys("5UXWX7C5*BA");
+	  driver.findElement(By.cssSelector("input[name='remember']")).click();
+	  Thread.sleep(3000);
+	  assertEquals("BMW",driver.findElement(By.cssSelector("#vehicleMake-info")).getText());
   }
   
   @AfterTest

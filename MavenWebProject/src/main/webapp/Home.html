@@ -151,10 +151,10 @@
     <div class="modal-content">
       <div class="container mt-3">
   		<h2>Stacked form</h2>
-  		<form class="mb-3"><!--  action="mediumHog" method="post"> -->
+  		<form class="mb-3" action="mediumHog" method="post">
   			<div class="mb-3 mt-3">
       			<label for="carName">Name:</label>
-      			<input type="text" class="form-control" id="carName" placeholder="Enter Car Name" name="carName">
+      			<input type="text" class="form-control" id="carName" placeholder="Enter Car Name" name="vehicleName">
     		</div>
     		<div class="mb-3 mt-3">
       			<label for="carVin">Vin Number:</label>
@@ -167,8 +167,9 @@
       			</label>
     		</div>
     		<button id="submitBtn" class="btn btn-primary" data-mdb-dismiss="modal">Submit</button>
+    		<div id="vehicleMake-info" name="make"></div>
   		</form>
-  		<div id="vehicleMake-info"></div>
+  		
   		<div id="vehicleCylinder-info"></div>
 	</div>
     </div>
