@@ -20,6 +20,13 @@ Connection connection = null;
 Statement statement = null;
 ResultSet resultSet = null;
 %>
+<%
+try{
+connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+statement=connection.createStatement();
+String sql ="select * from vehicles where vehicleID = 1";
+resultSet = statement.executeQuery(sql);
+%>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 	<head>
@@ -114,9 +121,9 @@ ResultSet resultSet = null;
 				<div class="col-md-4 searchMe">
 				<div class="card">
     				<div class="card-body">
-      					<h4 class="card-title">Jane Doe</h4>
-      					<p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>
-      					<a href="#" class="btn btn-primary">Details</a>
+      					<h4 class="card-title"><%=resultSet.getString("vehicleName") %></h4>
+      					<p class="card-text"><%=resultSet.getString("VIN") %></p>
+      					<a href="#" class="btn btn-primary"><%=resultSet.getString("Make") %></a>
       					<a href="#" class="btn btn-primary">Services</a>
     				</div>
     				<div style="text-align: center">
@@ -198,31 +205,9 @@ ResultSet resultSet = null;
   </div>
 </div>
 
-<table border="1">
-<tr>
-<td>first name</td>
-<td>last name</td>
-<td>City name</td>
-<td>Email</td>
 
-</tr>
-<%
-try{
-connection = DriverManager.getConnection(connectionUrl+database, userid, password);
-statement=connection.createStatement();
-String sql ="select * from vehicles";
-resultSet = statement.executeQuery(sql);
-while(resultSet.next()){
-%>
-<tr>
-<td><%=resultSet.getString("vehicleID") %></td>
-<td><%=resultSet.getString("vehicleName") %></td>
-<td><%=resultSet.getString("VIN") %></td>
-<td><%=resultSet.getString("Make") %></td>
 
-</tr>
 <%
-}
 connection.close();
 } catch (Exception e) {
 e.printStackTrace();
