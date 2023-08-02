@@ -5,7 +5,8 @@
     <classes>
       <class name="TestHome">
         <methods>
-          <include name="addVehicle"/>
+          <include name="addVehicle_verifyInput"/>
+          <include name="cleanup"/>
         </methods>
       </class> <!-- TestHome -->
     </classes>
