@@ -151,7 +151,7 @@
     <div class="modal-content">
       <div class="container mt-3">
   		<h2>Stacked form</h2>
-  		<form class="mb-3" action="mediumHog" method="post">
+  		<form class="mb-3"><!--  action="mediumHog" method="post"> -->
   			<div class="mb-3 mt-3">
       			<label for="carName">Name:</label>
       			<input type="text" class="form-control" id="carName" placeholder="Enter Car Name" name="carName">
@@ -166,7 +166,7 @@
         			<input class="form-check-input" type="checkbox" name="remember"> Remember me
       			</label>
     		</div>
-    		<button id="submitBtn" class="btn btn-primary">Submit</button>
+    		<button id="submitBtn" class="btn btn-primary" data-mdb-dismiss="modal">Submit</button>
   		</form>
   		<div id="vehicleMake-info"></div>
   		<div id="vehicleCylinder-info"></div>
