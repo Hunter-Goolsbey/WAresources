@@ -113,13 +113,13 @@ ResultSet resultSet = null;
 		<div id="cards" class="container">
 			<div class="row card-container" id="myMenu"><!-- style="width:45vw" -->
 			<%
-try{
-connection = DriverManager.getConnection(connectionUrl+database, userid, password);
-statement=connection.createStatement();
-String sql ="select * from vehicles";
-resultSet = statement.executeQuery(sql);
-while(resultSet.next()){
-%>
+				try{
+				connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+				statement=connection.createStatement();
+				String sql ="select * from vehicles";
+				resultSet = statement.executeQuery(sql);
+				while(resultSet.next()){
+			%>
 				<div class="col-md-4 searchMe">
 				<div class="card">
     				<div class="card-body">
@@ -137,11 +137,11 @@ while(resultSet.next()){
 				</div>
   			</div>
   			<%}%>
-  			<div class="col-md-4 searchMe">
+  			<!--  <div class="col-md-4 searchMe">
 				<div class="card">
     				<div class="card-body">
       					<h4 class="card-title" >Leroy</h4>
-      					<p class="card-text"><!-- id="vehicleMake-info"> --></p>
+      					<p class="card-text"></p>
       					<p class="card-text">Milage: 170,000</p>
       					<p class="card-text">Drive: Front-Wheel</p>
       					<a href="#" class="btn btn-primary">Details</a>
@@ -164,7 +164,7 @@ while(resultSet.next()){
       				<p class="card-text">Drive: Front-Wheel</p>
       				<a href="#" class="btn btn-primary">Details</a>
       				<a href="#" class="btn btn-primary">Services</a>
-    			</div>
+    			</div>-->
     			<div style="text-align: center">
     				<svg xmlns="http://www.w3.org/2000/svg" width="50%" height="50%" fill="currentColor" class="bi bi-car-front" viewBox="0 0 16 16">
   						<path d="M4 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM4.862 4.276 3.906 6.19a.51.51 0 0 0 .497.731c.91-.073 2.35-.17 3.597-.17 1.247 0 2.688.097 3.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 10.691 4H5.309a.5.5 0 0 0-.447.276Z"/>
@@ -173,8 +173,7 @@ while(resultSet.next()){
 				</div>
   			</div>
   		</div>
-  		</div>
-  		</div>
+
   		<!--  <div id="vehicleMake-info"></div> -->
   		<!--  <div id="vehicleCylinder-info"></div>-->
   		<!-- The Modal -->
