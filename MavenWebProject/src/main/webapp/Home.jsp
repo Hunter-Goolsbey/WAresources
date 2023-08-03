@@ -20,14 +20,7 @@ Connection connection = null;
 Statement statement = null;
 ResultSet resultSet = null;
 %>
-<%
-try{
-connection = DriverManager.getConnection(connectionUrl+database, userid, password);
-statement=connection.createStatement();
-String sql ="select * from vehicles where vehicleID = 1";
-resultSet = statement.executeQuery(sql);
-while(resultSet.next()){
-%>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 	<head>
@@ -119,8 +112,14 @@ while(resultSet.next()){
 		</div>
 		<div id="cards" class="container">
 			<div class="row card-container" id="myMenu"><!-- style="width:45vw" -->
-			<%for (int i=0;i<6;i++)
-			{%>
+			<%
+try{
+connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+statement=connection.createStatement();
+String sql ="select * from vehicles";
+resultSet = statement.executeQuery(sql);
+while(resultSet.next()){
+%>
 				<div class="col-md-4 searchMe">
 				<div class="card">
     				<div class="card-body">
@@ -212,7 +211,6 @@ while(resultSet.next()){
 
 
 <%
-}
 connection.close();
 } catch (Exception e) {
 e.printStackTrace();
