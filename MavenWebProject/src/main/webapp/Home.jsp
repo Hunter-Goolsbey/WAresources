@@ -199,7 +199,7 @@ while(resultSet.next()){
       			</label>
     		</div>
     		<button id="submitBtn" class="btn btn-primary" data-mdb-dismiss="modal">Submit</button>
-    		<div id="vehicleMake-info" name="make"></div>
+    		<input id="vehicleMake-info" name="make"></input>
   		</form>
   		
   		<div id="vehicleCylinder-info"></div>
