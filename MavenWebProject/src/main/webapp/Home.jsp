@@ -243,7 +243,7 @@ function myFunction() {
 </script>
 <script>
 document.addEventListener("click", function (event) {
-	  // Check if the click event originated from the "vinInput" element
+	
 	  var e, o
 	  o = document.getElementById("vin").value;
 	  if (o.length > 0) {
