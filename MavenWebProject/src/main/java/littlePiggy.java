@@ -30,8 +30,10 @@ public class littlePiggy extends HttpServlet {
 		String pw = System.getenv("SQLJAVA");
 		String location = System.getenv("SQLLOCATION");
 		String destination = "Home.jsp";
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher(destination);
+		
 		request.setAttribute("pw", pw);
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher(destination);
+		requestDispatcher.forward(request, response);
 		
 		
 		try {
@@ -55,6 +57,6 @@ public class littlePiggy extends HttpServlet {
 			//response.getWriter().println(pw);
 			//System.out.println(e);
 		}
-		requestDispatcher.forward(request, response);
+		
 	}
 }
