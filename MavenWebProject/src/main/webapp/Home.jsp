@@ -216,7 +216,6 @@ connection.close();
 e.printStackTrace();
 }
 %>
-</table> 
 
   		
 		<script>
