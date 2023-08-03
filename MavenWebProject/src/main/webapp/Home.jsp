@@ -173,6 +173,7 @@ ResultSet resultSet = null;
 				</div>
   			</div>
   		</div>
+  		</div>
 
   		<!--  <div id="vehicleMake-info"></div> -->
   		<!--  <div id="vehicleCylinder-info"></div>-->
