@@ -276,7 +276,7 @@ document.addEventListener("click", function (event) {
 	        }
 	      }
 
-	      document.getElementById("vehicleMake-info").valuemakeValue);
+	      document.getElementById("vehicleMake-info").value = makeValue);
 	      $("#vehicleCylinder-info").text(cylinderValue);
 	    });
 	  }
