@@ -243,10 +243,8 @@ function myFunction() {
 </script>
 <script>
 document.addEventListener("click", function (event) {
-	
-	  var e, o
-	  o = document.getElementById("vin").value;
-	  if (o.length > 0) {
+	  // Check if the click event originated from the "vinInput" element
+	  if (event.target.id !== "vin") {
 	    var inpt = document.getElementById("vin").value;
 	    var settings = {
 	      "url": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/" + inpt + "?format=json",
