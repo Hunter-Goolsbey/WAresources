@@ -119,6 +119,8 @@ while(resultSet.next()){
 		</div>
 		<div id="cards" class="container">
 			<div class="row card-container" id="myMenu"><!-- style="width:45vw" -->
+			<%for (int i=0;i<6;i++)
+			{%>
 				<div class="col-md-4 searchMe">
 				<div class="card">
     				<div class="card-body">
@@ -135,6 +137,7 @@ while(resultSet.next()){
 					</div>
 				</div>
   			</div>
+  			<%}%>
   			<div class="col-md-4 searchMe">
 				<div class="card">
     				<div class="card-body">
