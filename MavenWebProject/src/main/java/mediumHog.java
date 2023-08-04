@@ -52,6 +52,7 @@ public class mediumHog extends HttpServlet {
 			//System.out.println("Connection not Made");
 			response.getWriter().println(e);
 			response.getWriter().println(id);
+			response.getWriter().println(del);
 			//response.getWriter().println(pw);
 			//System.out.println(e);
 		}
