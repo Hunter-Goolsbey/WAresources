@@ -122,27 +122,28 @@ while(resultSet.next()){
 %>
 				<div class="col-md-4 searchMe">
 				<div class="card">
+				<form action="mediumHog" method="post">
     				<div class="card-body">
     				<div class="row p-1">
       					<div class="col-sm">
       						<h4 class="card-title"><%=resultSet.getString("vehicleName") %></h4>
       					</div>
       					<div class="col-sm text-end">
-      					<form action="mediumHog" method="post">
       					<button type="button" class="btn" name="deleteVehicle">
       						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
   								<path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
   								<path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
 							</svg>
 						</button>
-						</form>
+						
       					</div>
       					</div>
-      					<p hidden="true"><%=resultSet.getString("vehicleID") %></p>
+      					<input type = "hidden" name = "vehicleID" value = <%=resultSet.getString("vehicleID") %>/>
       					<p class="card-text">VIN: <%=resultSet.getString("VIN") %></p>
       					<a href="#" class="btn btn-primary"><%=resultSet.getString("Make") %></a>
       					<a href="#" class="btn btn-primary">Services</a>
     				</div>
+    				</form>
     				<div style="text-align: center">
     					<svg xmlns="http://www.w3.org/2000/svg" width="50%" height="50%" fill="currentColor" class="bi bi-car-front" viewBox="0 0 16 16">
   							<path d="M4 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM4.862 4.276 3.906 6.19a.51.51 0 0 0 .497.731c.91-.073 2.35-.17 3.597-.17 1.247 0 2.688.097 3.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 10.691 4H5.309a.5.5 0 0 0-.447.276Z"/>

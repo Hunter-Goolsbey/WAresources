@@ -27,6 +27,8 @@ public class mediumHog extends HttpServlet {
 		String pw = System.getenv("SQLJAVA");
 		String location = System.getenv("SQLLOCATION");
 		String del = request.getParameter("deleteVehicle");
+		String id = request.getParameter("vehicleID");
+
     	
     	response.setContentType("text/html");
     	response.getWriter().println("<h1>Wrong username and password</h1>");
@@ -36,10 +38,10 @@ public class mediumHog extends HttpServlet {
 			Connection con = DriverManager.getConnection("jdbc:mysql://" + location + ":3306/myGarage", "ducky", pw);
 			Statement stm = con.createStatement();
 			String insertQuery = "INSERT INTO vehicles (vehicleName, VIN, Make) VALUES ('" + vehicle + "', '" + vinNum + "', '" + make + "');";
-			stm.executeUpdate(insertQuery);
 			if (del.length() > 0) {
-				
+				insertQuery = "DELETE FROM vehicles WHERE vehicleID = " + id + ";";
 			}
+			stm.executeUpdate(insertQuery);
 			
 			response.sendRedirect("Home.jsp");
 				// System.out.println(Integer.toString(2+2));
