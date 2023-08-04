@@ -216,7 +216,7 @@ while(resultSet.next()){
     		</div>
     		<button id="submitBtn" class="btn btn-primary" data-mdb-dismiss="modal">Submit</button>
     		<input id="vehicleMake-info" name="make"></input>
-    		<div>${name}</div>
+    		<div><%= request.getParameter("name") %></div>
   		</form>
   		
   		<div id="vehicleCylinder-info"></div>

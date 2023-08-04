@@ -28,7 +28,7 @@ public class littlePiggy extends HttpServlet {
 		String password = request.getParameter("password");
 		String pw = System.getenv("SQLJAVA");
 		String location = System.getenv("SQLLOCATION");
-		request.setAttribute("name", "Hussein Terek");
+		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://" + location + ":3306/helloworld", "ducky", pw);
@@ -36,7 +36,7 @@ public class littlePiggy extends HttpServlet {
 			ResultSet rs = stm.executeQuery(
 					"select * from UserCredentials where Username='" + username + "'and Password='" + password + "';");
 			if (rs.next()) {
-				response.sendRedirect("Home.jsp");
+				response.sendRedirect( "Home.jsp?name=Hussein Terek" );
 				// System.out.println(Integer.toString(2+2));
 			} else {
 				//response.sendRedirect("https://google.com");
@@ -50,6 +50,6 @@ public class littlePiggy extends HttpServlet {
 			//response.getWriter().println(pw);
 			//System.out.println(e);
 		}
-		request.getRequestDispatcher("Home.jsp").forward(request, response);
+		
 	}
 }
