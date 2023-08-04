@@ -26,6 +26,7 @@ public class mediumHog extends HttpServlet {
 		String make = request.getParameter("make");
 		String pw = System.getenv("SQLJAVA");
 		String location = System.getenv("SQLLOCATION");
+		String del = request.getParameter("deleteVehicle");
     	
     	response.setContentType("text/html");
     	response.getWriter().println("<h1>Wrong username and password</h1>");
@@ -36,6 +37,10 @@ public class mediumHog extends HttpServlet {
 			Statement stm = con.createStatement();
 			String insertQuery = "INSERT INTO vehicles (vehicleName, VIN, Make) VALUES ('" + vehicle + "', '" + vinNum + "', '" + make + "');";
 			stm.executeUpdate(insertQuery);
+			if (del.length() > 0) {
+				
+			}
+			
 			response.sendRedirect("Home.jsp");
 				// System.out.println(Integer.toString(2+2));
 			con.close();
