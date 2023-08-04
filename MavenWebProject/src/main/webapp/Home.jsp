@@ -138,7 +138,7 @@ while(resultSet.next()){
 						
       					</div>
       					</div>
-      					<input type = "hidden" name = "vehicleID" value = <%=resultSet.getString("vehicleID") %>/>
+      					<input type = "hidden" name = "vehicleID" value = <%=resultSet.getString("vehicleID") %>>
       					<p class="card-text">VIN: <%=resultSet.getString("VIN") %></p>
       					<a href="#" class="btn btn-primary"><%=resultSet.getString("Make") %></a>
       					<a href="#" class="btn btn-primary">Services</a>
