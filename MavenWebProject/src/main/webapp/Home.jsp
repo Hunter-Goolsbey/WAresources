@@ -116,7 +116,7 @@ ResultSet resultSet = null;
 try{
 connection = DriverManager.getConnection(connectionUrl+database, userid, password);
 statement=connection.createStatement();
-String sql ="select * from vehicles";
+String sql ="select * from vehicles where vehicleID = 1";
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
 %>
