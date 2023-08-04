@@ -28,6 +28,7 @@ public class mediumHog extends HttpServlet {
 		String location = System.getenv("SQLLOCATION");
 		String del = request.getParameter("deleteVehicle");
 		String id = request.getParameter("vehicleID");
+		String garageID = request.getParameter("garageID");
 
     	
     	response.setContentType("text/html");
@@ -37,7 +38,7 @@ public class mediumHog extends HttpServlet {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://" + location + ":3306/myGarage", "ducky", pw);
 			Statement stm = con.createStatement();
-			String insertQuery = "INSERT INTO vehicles (vehicleName, VIN, Make) VALUES ('" + vehicle + "', '" + vinNum + "', '" + make + "');";
+			String insertQuery = "INSERT INTO vehicles (vehicleName, VIN, Make) VALUES ('" + vehicle + "', '" + vinNum + "', '" + make + "', '" + garageID +"');";
 			if (del != null) {
 				insertQuery = "DELETE FROM vehicles WHERE vehicleID = " + id + ";";
 			}
@@ -51,10 +52,10 @@ public class mediumHog extends HttpServlet {
 			// response.sendRedirect("Home.jsp");
 			//System.out.println("Connection not Made");
 			response.getWriter().println(e);
-			response.getWriter().println(del);
-			response.getWriter().println(vehicle);
-			response.getWriter().println(vinNum);
-			response.getWriter().println(make);
+			//response.getWriter().println(del);
+			//response.getWriter().println(vehicle);
+			//response.getWriter().println(vinNum);
+			//response.getWriter().println(make);
 			//response.getWriter().println(pw);
 			//System.out.println(e);
 		}
