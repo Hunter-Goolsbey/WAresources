@@ -38,7 +38,7 @@ public class mediumHog extends HttpServlet {
 			Connection con = DriverManager.getConnection("jdbc:mysql://" + location + ":3306/myGarage", "ducky", pw);
 			Statement stm = con.createStatement();
 			String insertQuery = "INSERT INTO vehicles (vehicleName, VIN, Make) VALUES ('" + vehicle + "', '" + vinNum + "', '" + make + "');";
-			if (Integer.parseInt(del) > 0) {
+			if (del != null) {
 				insertQuery = "DELETE FROM vehicles WHERE vehicleID = " + id + ";";
 			}
 			stm.executeUpdate(insertQuery);
