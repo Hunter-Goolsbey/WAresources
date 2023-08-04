@@ -51,6 +51,7 @@ public class mediumHog extends HttpServlet {
 			// response.sendRedirect("Home.jsp");
 			//System.out.println("Connection not Made");
 			response.getWriter().println(e);
+			response.getWriter().println(id);
 			//response.getWriter().println(pw);
 			//System.out.println(e);
 		}
