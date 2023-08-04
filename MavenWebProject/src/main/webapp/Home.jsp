@@ -306,6 +306,7 @@ function change()
     var elem = document.getElementById("deleteVehicle");
     if (elem.value=="0") elem.value = "1";
     else elem.value = "0";
+    location.reload();
 }
 </script>
 
