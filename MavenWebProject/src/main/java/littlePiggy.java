@@ -40,11 +40,11 @@ public class littlePiggy extends HttpServlet {
 			ResultSet rs = stm.executeQuery(
 					"select * from UserCredentials where Username='" + username + "'and Password='" + password + "';");
 			if (rs.next()) {
-				request.setAttribute("data", std);
 				std = rs.getString(3);
+				request.setAttribute("data", std);
 				RequestDispatcher rd = request.getRequestDispatcher("Home.jsp");
 				rd.forward(request, response);
-				response.sendRedirect( "Home.jsp?name=" + rs.getString(3));
+				//response.sendRedirect( "Home.jsp?name=" + rs.getString(3));
 				// System.out.println(Integer.toString(2+2));
 			} else {
 				//response.sendRedirect("https://google.com");
