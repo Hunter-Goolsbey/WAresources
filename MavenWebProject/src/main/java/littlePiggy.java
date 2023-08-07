@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,6 +29,11 @@ public class littlePiggy extends HttpServlet {
 		String password = request.getParameter("password");
 		String pw = System.getenv("SQLJAVA");
 		String location = System.getenv("SQLLOCATION");
+		String std = "hello world";
+		request.setAttribute("data", std);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("Home.jsp");
+		
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -36,6 +42,7 @@ public class littlePiggy extends HttpServlet {
 			ResultSet rs = stm.executeQuery(
 					"select * from UserCredentials where Username='" + username + "'and Password='" + password + "';");
 			if (rs.next()) {
+				rd.forward(request, response);
 				response.sendRedirect( "Home.jsp?name=" + rs.getString(3));
 				// System.out.println(Integer.toString(2+2));
 			} else {
