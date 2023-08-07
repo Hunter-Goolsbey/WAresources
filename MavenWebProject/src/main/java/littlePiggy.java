@@ -30,9 +30,7 @@ public class littlePiggy extends HttpServlet {
 		String pw = System.getenv("SQLJAVA");
 		String location = System.getenv("SQLLOCATION");
 		String std = "hello world";
-		request.setAttribute("data", std);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("Home.jsp");
 		
 		
 		try {
@@ -42,6 +40,9 @@ public class littlePiggy extends HttpServlet {
 			ResultSet rs = stm.executeQuery(
 					"select * from UserCredentials where Username='" + username + "'and Password='" + password + "';");
 			if (rs.next()) {
+				request.setAttribute("data", std);
+				std = rs.getString(3);
+				RequestDispatcher rd = request.getRequestDispatcher("Home.jsp");
 				rd.forward(request, response);
 				response.sendRedirect( "Home.jsp?name=" + rs.getString(3));
 				// System.out.println(Integer.toString(2+2));

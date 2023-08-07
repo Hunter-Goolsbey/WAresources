@@ -116,7 +116,7 @@ ResultSet resultSet = null;
 try{
 connection = DriverManager.getConnection(connectionUrl+database, userid, password);
 statement=connection.createStatement();
-String sql ="select * from vehicles where garageID = " + request.getParameter("name");
+String sql ="select * from vehicles where garageID = " + request.getAttribute("data");
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
 %>
