@@ -200,7 +200,7 @@ while(resultSet.next()){
       <div class="container mt-3">
   		<h2>Stacked form</h2>
   		<form class="mb-3" action="mediumHog" method="post">
-  			<input type = "hidden" name = "garageID" value = <%=request.getParameter("name") %>>
+  			<input type = "hidden" name = "garageID" value = <%=request.getAttribute("data") %>>
   			<div class="mb-3 mt-3">
       			<label for="carName">Name:</label>
       			<input type="text" class="form-control" id="carName" placeholder="Enter Car Name" name="vehicleName">
