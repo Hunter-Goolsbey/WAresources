@@ -6,6 +6,9 @@
       <class name="TestHome">
         <methods>
           <include name="addVehicle_verifyInput"/>
+          <include name="myGarage_Redirects_Home"/>
+          <include name="Test_NavMenu_isHidden"/>
+          <include name="searchGarage_Does_Reduce"/>
           <include name="cleanup"/>
         </methods>
       </class> <!-- TestHome -->
