@@ -4,7 +4,7 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
-<%
+<%//Set database connection variables
 String id = request.getParameter("userid");
 String driver = "com.mysql.jdbc.Driver";
 String connectionUrl = "jdbc:mysql://18.235.221.130:3306/";
