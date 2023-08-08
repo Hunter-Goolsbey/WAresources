@@ -41,6 +41,7 @@ public class littlePiggy extends HttpServlet {
 					"select * from UserCredentials where Username='" + username + "'and Password='" + password + "';");
 			if (rs.next()) {
 				std = rs.getString(3);
+				request.setAttribute("pw", pw);
 				request.setAttribute("data", std);
 				RequestDispatcher rd = request.getRequestDispatcher("Home.jsp");
 				rd.forward(request, response);
