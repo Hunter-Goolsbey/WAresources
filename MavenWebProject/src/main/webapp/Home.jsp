@@ -7,7 +7,7 @@
 <%//Set database connection variables
 String id = request.getParameter("userid");
 String driver = "com.mysql.jdbc.Driver";
-String connectionUrl = "jdbc:mysql://"+ request.getAttribute("location").toString() + "/";
+String connectionUrl = "jdbc:mysql://18.235.221.130:3306/";
 String database = "myGarage";
 String userid = "ducky";
 String password = request.getAttribute("pw").toString();
