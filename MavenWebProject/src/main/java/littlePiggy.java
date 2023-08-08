@@ -47,18 +47,13 @@ public class littlePiggy extends HttpServlet {
 				RequestDispatcher rd = request.getRequestDispatcher("Home.jsp");
 				rd.forward(request, response);
 				//response.sendRedirect( "Home.jsp?name=" + rs.getString(3));
-				// System.out.println(Integer.toString(2+2));
 			} else {
-				//response.sendRedirect("https://google.com");
 				response.getWriter().println("<h1>Wrong username and password</h1>");
 			}
 			con.close();
 		} catch (Exception e) {
 			// response.sendRedirect("Home.jsp");
-			//System.out.println("Connection not Made");
 			response.getWriter().println(e);
-			//response.getWriter().println(pw);
-			//System.out.println(e);
 		}
 		
 	}
