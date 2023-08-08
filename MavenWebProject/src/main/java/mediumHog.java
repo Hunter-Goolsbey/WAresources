@@ -44,7 +44,7 @@ public class mediumHog extends HttpServlet {
 			}
 			stm.executeUpdate(insertQuery);
 			
-			response.sendRedirect("Home.jsp");
+			response.sendRedirect("http://34.193.84.77:8080/MavenWebProject/littlePiggy");
 				// System.out.println(Integer.toString(2+2));
 			con.close();
 			
