@@ -115,6 +115,7 @@ public class TestHome {
 		  Thread.sleep(1000);
 		  userid = driver.findElement(By.cssSelector("[class] [action] div:nth-child(8)")).getText().toString();
 		  assertEquals(SQLquery("select * from UserCredentials where Username='" + usr + "'and Password='" + usr + "';"), userid);
+		  
 	  } else {
 		  login(usr,psw);
 		  Thread.sleep(1000);
