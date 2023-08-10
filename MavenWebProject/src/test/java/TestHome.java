@@ -1,6 +1,11 @@
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertFalse;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 import org.testng.annotations.AfterMethod;
@@ -9,37 +14,52 @@ import org.testng.annotations.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 
 public class TestHome {
+	String location = System.getenv("SQLLOCATION");
+	String pw = System.getenv("SQLJAVA");
+	String result;
+	String usr = "guest";
+	String psw = "";
+	
 	//*Sets up driver instance and saves public variables*
 	
 	//SeleniumConfig SelenSetup = new SeleniumConfig();
 	WebDriver driver = SeleniumConfig.driverSetup();
 	String home = "http://34.193.84.77:8080/MavenWebProject/Home.jsp";
-	
-	//RM: Function no longer included
-//  @Test
-//  public void test_Home_isCollapsed() throws InterruptedException {
-	//*Test to see if collapsable paine is-collapsed on-load*
-//	  WebDriver driver = SelenSetup.driverSetup();
-//	  driver.get("http://34.193.84.77:8080/MavenWebProject/Home.jsp");
-//	  driver.findElement(By.xpath("/html//div[@id='accordion']//a[@href='#collapseOne']")).click();
-//	  Thread.sleep(2000);
-//	  driver.findElement(By.xpath("/html//div[@id='accordion']//a[@href='#collapseOne']")).click();
-//	  assertEquals(driver.findElement(By.xpath("/html//div[@id='accordion']//a[@href='#collapseOne']")).getAttribute("class"), "btn collapsed");
-//	  driver.quit();
-//  }
+
+  private void login(String userN) {
+	  driver.get("http://34.193.84.77:8080/MavenWebProject/");
+	  driver.findElement(By.cssSelector("[type='text']")).sendKeys(userN);
+	  driver.findElement(By.cssSelector("[type='password']")).sendKeys(userN);
+	  driver.findElement(By.cssSelector("[type='password']")).sendKeys(Keys.RETURN);
+  }
+  private void login(String userN, String pass) {
+	  driver.get("http://34.193.84.77:8080/MavenWebProject/");
+	  driver.findElement(By.cssSelector("[type='text']")).sendKeys(userN);
+	  driver.findElement(By.cssSelector("[type='password']")).sendKeys(pass);
+	  driver.findElement(By.cssSelector("[type='password']")).sendKeys(Keys.RETURN);
+  }
+  
+  private String SQLquery(String Stmt) throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://" + "18.235.221.130" + ":3306/helloworld", "ducky", "roundabout");
+		Statement stm = con.createStatement();
+		ResultSet rs = stm.executeQuery(Stmt);
+		while (rs.next()) {
+			result = rs.getString(3);
+		}
+		return result;
+  }
   
   @Test
-  public void Test_NavMenu_isHidden() throws InterruptedException {
+  public void NavMenu_isHidden() throws InterruptedException {
 	  //*Tests to ensure modal navigation panel is closed on-load*
 	  driver.get(home);
 	  Thread.sleep(3000); //Needed
-	  //driver.findElement(By.cssSelector("[data-bs-toggle='offcanvas']")).click();
-	  //Thread.sleep(2000);
 	  assertEquals("offcanvas offcanvas-end", driver.findElement(By.id("modal")).getAttribute("class"));
-	  //driver.findElement(By.cssSelector("[data-bs-toggle='offcanvas']")).click();
   }
   
   @Test
@@ -57,10 +77,10 @@ public class TestHome {
 	  List<WebElement> searchResults;
 	  int count = 0;
 	  
-	  driver.get(home);
+	  login("guest");
 	  Thread.sleep(1000);
 	  
-	  driver.findElement(By.cssSelector("[onkeyup]")).sendKeys("l");
+	  driver.findElement(By.cssSelector("[onkeyup]")).sendKeys("ho");
 	  Thread.sleep(2000);
 	  
 	  //Tests search result display count against back-end count
@@ -71,7 +91,7 @@ public class TestHome {
 			  ++count;
 		  }
 	  }
-	  assertEquals(2, count); //2 swap out with direct SQL COUNT query once tables are created
+	  assertEquals(1, count); //2 swap out with direct SQL COUNT query once tables are created
   }
   
   @Test
@@ -85,8 +105,19 @@ public class TestHome {
 	  assertEquals("BMW",driver.findElement(By.cssSelector("input#vehicleMake-info")).getAttribute("value"));
   }
   
+  @Test
+  public void login() throws InterruptedException, ClassNotFoundException, SQLException{
+	  String userid;
+	  login(usr);
+	  Thread.sleep(1000);
+	  driver.findElement(By.cssSelector("[data-bs-toggle='modal']")).click();
+	  Thread.sleep(1000);
+	  userid = driver.findElement(By.cssSelector("[class] [action] div:nth-child(8)")).getText().toString();
+	  assertEquals(SQLquery("select * from UserCredentials where Username='" + usr + "'and Password='" + usr + "';"), userid);
+  }
+  
   @AfterTest
   public void cleanup(){
-  driver.quit();
+	  driver.quit();
   }
 }
