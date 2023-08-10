@@ -1,33 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-10T15:37:49 PDT" name="Default suite" finished-at="2023-08-10T15:38:07 PDT" duration-ms="17259">
+  <suite started-at="2023-08-10T16:38:45 PDT" name="Default suite" finished-at="2023-08-10T16:38:49 PDT" duration-ms="4018">
     <groups>
     </groups>
-    <test started-at="2023-08-10T15:37:49 PDT" name="Default test" finished-at="2023-08-10T15:38:07 PDT" duration-ms="17259">
+    <test started-at="2023-08-10T16:38:45 PDT" name="Default test" finished-at="2023-08-10T16:38:49 PDT" duration-ms="4018">
       <class name="TestHome">
-        <test-method signature="NavMenu_isHidden()[pri:0, instance:TestHome@566d0c69]" started-at="2023-08-10T15:37:49 PDT" name="NavMenu_isHidden" finished-at="2023-08-10T15:37:53 PDT" duration-ms="3573" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- NavMenu_isHidden -->
-        <test-method signature="addVehicle_verifyInput()[pri:0, instance:TestHome@566d0c69]" started-at="2023-08-10T15:37:53 PDT" name="addVehicle_verifyInput" finished-at="2023-08-10T15:37:57 PDT" duration-ms="4390" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addVehicle_verifyInput -->
-        <test-method signature="login()[pri:0, instance:TestHome@566d0c69]" started-at="2023-08-10T15:37:57 PDT" name="login" finished-at="2023-08-10T15:38:01 PDT" duration-ms="3349" status="PASS">
+        <test-method signature="login()[pri:0, instance:TestHome@5e39850]" started-at="2023-08-10T16:38:45 PDT" name="login" finished-at="2023-08-10T16:38:49 PDT" duration-ms="3883" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="myGarage_Redirects_Home()[pri:0, instance:TestHome@566d0c69]" started-at="2023-08-10T15:38:01 PDT" name="myGarage_Redirects_Home" finished-at="2023-08-10T15:38:03 PDT" duration-ms="2297" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- myGarage_Redirects_Home -->
-        <test-method signature="searchGarage_Does_Reduce()[pri:0, instance:TestHome@566d0c69]" started-at="2023-08-10T15:38:03 PDT" name="searchGarage_Does_Reduce" finished-at="2023-08-10T15:38:06 PDT" duration-ms="3485" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchGarage_Does_Reduce -->
-        <test-method is-config="true" signature="cleanup()[pri:0, instance:TestHome@566d0c69]" started-at="2023-08-10T15:38:06 PDT" name="cleanup" finished-at="2023-08-10T15:38:07 PDT" duration-ms="133" status="PASS">
+        <test-method is-config="true" signature="cleanup()[pri:0, instance:TestHome@5e39850]" started-at="2023-08-10T16:38:49 PDT" name="cleanup" finished-at="2023-08-10T16:38:49 PDT" duration-ms="109" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanup -->
