@@ -82,7 +82,7 @@ public class TestHome {
 	  driver.findElement(By.cssSelector("[placeholder='VIN']")).sendKeys("5UXWX7C5*BA");
 	  driver.findElement(By.cssSelector("input[name='remember']")).click();
 	  Thread.sleep(3000);
-	  assertEquals("BMW",driver.findElement(By.cssSelector("#vehicleMake-info")).getText());
+	  assertEquals("BMW",driver.findElement(By.cssSelector("input#vehicleMake-info")).getAttribute("value"));
   }
   
   @AfterTest
