@@ -108,12 +108,22 @@ public class TestHome {
   @Test
   public void login() throws InterruptedException, ClassNotFoundException, SQLException{
 	  String userid;
-	  login(usr);
-	  Thread.sleep(1000);
-	  driver.findElement(By.cssSelector("[data-bs-toggle='modal']")).click();
-	  Thread.sleep(1000);
-	  userid = driver.findElement(By.cssSelector("[class] [action] div:nth-child(8)")).getText().toString();
-	  assertEquals(SQLquery("select * from UserCredentials where Username='" + usr + "'and Password='" + usr + "';"), userid);
+	  if (psw == "") {
+		  login(usr);
+		  Thread.sleep(1000);
+		  driver.findElement(By.cssSelector("[data-bs-toggle='modal']")).click();
+		  Thread.sleep(1000);
+		  userid = driver.findElement(By.cssSelector("[class] [action] div:nth-child(8)")).getText().toString();
+		  assertEquals(SQLquery("select * from UserCredentials where Username='" + usr + "'and Password='" + usr + "';"), userid);
+	  } else {
+		  login(usr,psw);
+		  Thread.sleep(1000);
+		  driver.findElement(By.cssSelector("[data-bs-toggle='modal']")).click();
+		  Thread.sleep(1000);
+		  userid = driver.findElement(By.cssSelector("[class] [action] div:nth-child(8)")).getText().toString();
+		  assertEquals(SQLquery("select * from UserCredentials where Username='" + usr + "'and Password='" + psw + "';"), userid);
+	  }
+	  
   }
   
   @AfterTest
